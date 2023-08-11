@@ -26,9 +26,13 @@ socket.onmessage = e => {
 
     if (data.status !== "success") {
         room_id.innerText = "Offline";
+        course.style.visibility = "hidden";
+        members.style.visibility = "hidden";
         return;
     }
 
+    course.style.visibility = "visible";
+    members.style.visibility = "visible";
     room_id.innerText = data.id;
     course.innerText = data.setting.course;
     members.innerHTML += data.members.map(v => {
