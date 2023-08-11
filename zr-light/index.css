@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: "Poppins", sans-serif;
+}
+
+.title {
+    display: block;
+    margin: 1rem;
+    background: ghostwhite;
+    border-radius: .4rem;
+    padding: .7rem;
+    box-shadow: 0 0 1rem white;
+    font-size: x-large;
+}
+
+.track_name {
+    display: block;
+    margin: 1rem;
+    padding: .4rem;
+    border-radius: .4rem;
+    color: white;
+    background: linear-gradient(to right, #674fc1, 70%, #5f139600);
+}
+
+li.member {
+    display: block;
+    margin: .7rem 1rem;
+    padding: .6rem;
+    border-radius: .3rem;
+    background: white;
+    box-shadow: 0 0 1rem white;
+    font-size: large;
+}
