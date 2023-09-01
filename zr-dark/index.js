@@ -36,6 +36,10 @@ socket.onmessage = e => {
     room_id.innerText = data.id;
     course.innerText = data.setting.course;
     members.innerHTML += data.members.map(v => {
-        return `<li class="member">${v.name}</li>`
+        let s = `<li class="member">${v.name}</li>`;
+        if (v["guest_name"]) {
+            s += `\n<li class="member">${v["guest_name"]}</li>`
+        }
+        return s
     }).join("\n");
 }
