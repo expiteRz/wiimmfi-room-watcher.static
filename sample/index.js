@@ -18,6 +18,10 @@ socket.onerror = err => {
 }
 
 socket.onmessage = e => {
+    roomId.innerText = "";
+    trackName.innerText = "";
+    memberOutput.innerHTML = "";
+    
     let data = JSON.parse(e.data);
 
     if (data.status !== "success") {
