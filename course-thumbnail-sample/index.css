@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+body {
+    font-family: 'CTMKF', "Poppins", sans-serif;
+}
+
+#canvas {
+    position: relative;
+    width: 340px;
+    height: 150px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
+    /*outline: 6px solid #DB9F5360;*/
+    /*filter: drop-shadow(0 0 16px #4D3618);*/
+    overflow: hidden;
+}
+
+#course-img {
+    vertical-align: center;
+    position: absolute;
+}
+
+#trackname-bg {
+    position: absolute;
+    display: inline-block;
+    width: 290px;
+    background: linear-gradient(white, #e0e0e0);
+    padding: .6rem;
+    border-radius: 8px;
+    box-shadow: 0 0 32px #fff;
+    bottom: 7px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 290px;
+}
+
+#trackname {
+    display: inline-block;
+    width: 290px;
+    max-width: 290px;
+    font-size: large;
+    font-weight: 600;
+    color: #323232;
+    /*text-shadow: 0 0 8px #121212;*/
+}

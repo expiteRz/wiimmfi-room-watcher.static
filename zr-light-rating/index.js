@@ -34,9 +34,21 @@ socket.onmessage = e => {
     course.style.visibility = "visible";
     members.style.visibility = "visible";
     course.innerText = data.setting.course;
-    members.innerHTML = data.members.map(v => {
-        let s = `<li class="member">${v.name}</li>`;
-        if (v["guest_name"]) s += `\n<li class="member">${v["guest_name"]} ${guest_icon}</li>`
-        return s
+    members.innerHTML = data.members.map(member => {
+        switch (data.setting.game_mode) {
+            case 0:
+                if (member.guest_name !== "")
+                    return `<div class="member_root"><div class="member">${member.name}</div><div class="rating">${member.vr} VR</div></div><div class="member_root"><div class="member">${member.guest_name}</div><div class="rating">GUEST</div></div>`
+                else
+                    return `<div class="member_root"><div class="member">${member.name}</div><div class="rating">${member.vr} VR</div></div>`
+            case 1:
+            case 2:
+                if (member.guest_name !== "")
+                    return `<div class="member_root"><div class="member">${member.name}</div><div class="rating">${member.br} BR</div></div><div class="member_root"><div class="member">${member.guest_name}</div><div class="rating">GUEST</div></div>`
+                else
+                    return `<div class="member_root"><div class="member">${member.name}</div><div class="rating">${member.br} BR</div></div>`
+            default:
+                return `<div class="member_root"><div class="member">${member.name}</div></div>`
+        }
     }).join("\n");
 }

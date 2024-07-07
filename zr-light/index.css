@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
 html, body {
+    max-width: 400px;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
     font-family: 'CTMKF', "Poppins", sans-serif;
+    text-shadow: 0 .1em .8em black;
 }
 
 .title {
@@ -23,15 +25,36 @@ html, body {
     padding: .4rem;
     border-radius: .4rem;
     color: white;
-    background: linear-gradient(to right, #674fc1, 70%, #5f139600);
+    background: linear-gradient(to right, #c18c4f, 70%, #c18c4f00);
 }
 
 li.member {
     display: block;
-    margin: .7rem 1rem;
-    padding: .6rem;
-    border-radius: .3rem;
-    background: white;
-    box-shadow: 0 0 1rem white;
+    position: relative;
+    margin: .7em 1em;
+    padding: .6em 1em;
     font-size: large;
+    filter: drop-shadow(0 .3em 0 #ccc) drop-shadow(0 0 .4em #eee);
+}
+
+li.member::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    z-index: -1;
+    border-radius: .4em;
+    transform: skewX(-15deg);
+}
+
+.guest_icon {
+    position: absolute;
+    top: 1rem;
+    right: 1em;
+    margin-left: .3rem;
+    fill: black;
+    filter: drop-shadow(0 0 1rem black);
 }

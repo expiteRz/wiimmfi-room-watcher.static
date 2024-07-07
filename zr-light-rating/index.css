@@ -4,7 +4,6 @@ html, body {
     max-width: 400px;
     margin: 0;
     padding: 0;
-    /*overflow-x: hidden;*/
     font-family: 'CTMKF', "Poppins", sans-serif;
     text-shadow: 0 .1em .8em black;
 }
@@ -12,12 +11,11 @@ html, body {
 .title {
     display: block;
     margin: 1rem;
-    background: hsla(207deg, 14%, 16%, .6);
+    background: ghostwhite;
     border-radius: .4rem;
     padding: .7rem;
+    box-shadow: 0 0 1rem white;
     font-size: x-large;
-    color: white;
-    border: 1px solid hsl(207deg, 27%, 57%);
 }
 
 .track_name {
@@ -26,37 +24,53 @@ html, body {
     padding: .4rem;
     border-radius: .4rem;
     color: white;
-    background: linear-gradient(to right, hsl(207deg, 34%, 44%), 70%, hsla(207deg, 34%, 44%, 0));
+    background: linear-gradient(to right, #c18c4f, 70%, #c18c4f00);
 }
 
-li.member {
+.member_root {
     display: block;
     position: relative;
-    margin: .7em 1em;
-    padding: .6em 1em;
-    color: white;
+    color: black;
     font-size: large;
-    filter: drop-shadow(0 .3em 0 hsl(207deg, 14%, 24%)) drop-shadow(0 0 .4em hsl(207deg, 14%, 30%));
 }
 
-li.member::before {
+.member {
+    display: block;
+    margin: .7em 2em .7em 1em;
+    padding: .6em 1em;
+    font-size: large;
+    filter: drop-shadow(0 .3em 0 #ccc) drop-shadow(0 0 .4em #eee);
+}
+
+.member::before {
     content: "";
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    background: hsl(207deg, 14%, 30%);
+    background: white;
     z-index: -1;
     border-radius: .4em;
     transform: skewX(-15deg);
 }
 
+.member_root > .rating {
+    display: inline;
+    position: absolute;
+    top: .4em;
+    right: 1em;
+    padding: .2em .5em;
+    background-color: #c18c4f;
+    border-radius: .3em;
+    color: white;
+    filter: drop-shadow(0 .3em 0 #A6743A) drop-shadow(0 0 .4em #c18c4f);
+}
+
 .guest_icon {
     position: absolute;
-    top: 1rem;
-    right: 1em;
+    top: .8rem;
     margin-left: .3rem;
-    fill: lime;
+    color: lime;
     filter: drop-shadow(0 0 1rem lime);
 }
