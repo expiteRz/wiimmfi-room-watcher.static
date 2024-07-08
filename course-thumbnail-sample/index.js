@@ -30,11 +30,11 @@ course_img.addEventListener("error", () => {
 socket.onmessage = e => {
     let data = JSON.parse(e.data);
 
+    trackname.innerText = data.status !== "offline" ? data.setting.course : "Unknown";
     if (data.setting.course_id === preserved_bg_id || data.setting.course_id === 0) return;
+
     preserved_bg_id = data.setting.course_id;
-
     url = data.setting.thumbnail_url;
-    course_img.src = data.setting.thumbnail_url;
 
-    trackname.innerText = data.setting.course;
+    course_img.src = data.setting.thumbnail_url;
 }
